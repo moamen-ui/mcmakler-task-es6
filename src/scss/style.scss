@@ -1,0 +1,125 @@
+// colors
+
+$body-color: #151515;
+$color1: #bebebe;
+$color2: #b2b2b2;
+$color3: #6d6d6d;
+$border-color: #e3e3e3;
+
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: $body-color;
+    font-size: .9rem;
+}
+img {
+    width: 100%;
+}
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; 
+}
+.shadow {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.col {
+    width: calc( 100% / 3);
+    padding: 1rem;
+}
+.card {
+    border-width: 0px 1px 1px 1px;
+    border-style:solid;
+    border-color:$border-color;
+    .image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        .status {
+            position: absolute;
+            background-color: white;
+            top: 15px;
+            left: 15px;
+            border-radius: 2px;
+            padding: 5px 10px;
+            @extend .shadow;
+            font-weight: bold;
+            color: $color1;
+            text-transform: capitalize;
+        }
+    }
+    &-body {
+        padding: 0 2rem 2rem;
+    }
+    .title {
+        height: 3rem;overflow: hidden;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    address {
+        margin-bottom: 20px;
+        font-style: normal;
+        color: $color2;
+    }
+    .price {
+        font-weight: bold;
+        flex: 1;
+    }
+    .rooms {
+        text-align: right;
+        position: relative;
+        padding-right: 15px;
+        margin-right: 15px;
+        color: $color3;
+        &:after {
+            position: relative;
+            content: "";
+            width: 1px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $border-color;
+        }
+    }
+    .info {
+        display: flex;
+    }
+    .space {
+        color: $color3;
+        white-space: nowrap
+    }
+}
+sup {
+    font-size: 9px;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .wrapper {
+        max-width: 960px;  
+    }
+    .col {
+        width: calc( 100% / 2);
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 500px) {
+    .wrapper {
+        max-width: 450px;
+    }
+    .col {
+        width: calc( 100% / 1);
+    }
+}
